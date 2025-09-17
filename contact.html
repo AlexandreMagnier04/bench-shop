@@ -61,21 +61,40 @@
     </header>
 
     <main>
-
-        <section class="hero bg-gray-50 py-16">
-            <div class="container mx-auto px-4 text-center">
-                <h1 class="text-4xl font-bold text-gray-800 mb-4">Bienvenue chez Bench Shop</h1>
-                <p class="text-xl text-gray-600 mb-8">Découvrez notre collection exceptionnelle</p>
-                <button class="bg-orange text-white px-6 py-3 rounded-lg hover:bg-opacity-90">Découvrir</button>
+        <div class="container mx-auto max-w-4xl my-8 flex flex-col lg:flex-row gap-24 items-start">
+            <!-- Image à gauche -->
+            <div class="lg:w-1/3 my-auto">
+                <img src="./img/bench.png" alt="Bench" class="w-full h-auto">
             </div>
-        </section>
 
-        <section class="products py-16">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center mb-8">Nos Produits</h2>
-                <!-- Contenu des produits -->
-            </div>
-        </section>
+            <!-- Formulaire à droite -->
+            <section class="lg:w-2/3 p-6 bg-white">
+                <h1 class="text-3xl font-bench-font text-bench-green mb-6">Contactez-nous</h1>
+                <form action="#" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700">Nom</label>
+                        <input type="text" id="name" name="name" required
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-bench-green focus:border-bench-green sm:text-sm">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" id="email" name="email" required
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-bench-green focus:border-bench-green sm:text-sm">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                        <textarea id="message" name="message" rows="4" required
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-bench-green focus:border-bench-green sm:text-sm"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit"
+                            class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-bench-green hover:bg-bench-orange focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-bench-green">
+                            Envoyer
+                        </button>
+                    </div>
+                </form>
+            </section>
+        </div>
     </main>
 
     <footer class="">
@@ -102,7 +121,3 @@
             </nav>
         </div>
     </footer>
-
-</body>
-
-</html>
