@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,11 +30,9 @@
     </script>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-     crossorigin=""/>
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-     crossorigin=""></script>
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
     <style>
         #map {
@@ -42,48 +41,53 @@
             border-radius: 1rem;
             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
         }
+
         .bench-card {
             transition: all 0.3s ease;
         }
+
         .bench-card:hover {
             transform: translateY(-2px);
             background-color: #f8fafc;
         }
+
         body {
             background-color: #ffffff;
         }
     </style>
 </head>
-<body class="min-h-screen">
-    <header class="px-8 py-4">
-    <div class="container mx-auto flex justify-between items-center border-b-2 pb-4">
-        <a href="index.html"><img class="w-40" src="img/logo-bench-shop.png" alt="Bench Shop Logo"></a>
-        <nav>
-            <ul class="flex space-x-12">
-                <li><a href="index.html"
-                        class="relative font-bench-font text-gray-700 text-xl font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">Accueil</a>
-                </li>
-                <li><a href="products.html"
-                        class="relative font-bench-font text-gray-700 text-xl font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">Nos
-                        bancs</a></li>
-                <li><a href="map.html"
-                        class="relative font-bench-font text-gray-700 text-xl font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">Map</a>
-                </li>
-                <li><a href="aboutus.html"
-                        class="relative font-bench-font text-gray-700 text-xl font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">À
-                        propos</a></li>
-                <li><a href="contact.html"
-                        class="relative font-bench-font text-gray-700 text-xl font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">Contact</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</header>
-    <nav class="bg-white shadow-md rounded-lg mb-8 p-4">
+
+<body class="max-w-7xl mx-auto">
+    <header>
+        <div class="mb-20 container mx-auto flex justify-between items-center border-b-2 ">
+            <a href="index.html"><img class="w-40 " src=" img/logo-bench-shop.png" alt="Bench Shop Logo"> </a>
+            <nav>
+                <ul class="flex space-x-12">
+                    <li><a href="index.html"
+                            class="relative font-bench-font text-bench-orange text-xl font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">Accueil</a>
+                    </li>
+                    <li><a href="products.html"
+                            class="relative font-bench-font text-bench-orange text-xl font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">Nos
+                            bancs</a></li>
+                    <li><a href="map.html"
+                            class="relative font-bench-font text-bench-orange text-xl font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">Map</a>
+                    </li>
+                    <li><a href="aboutus.html"
+                            class="relative font-bench-font text-bench-orange text-xl font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">À
+                            propos</a></li>
+                    <li><a href="contact.html"
+                            class="relative font-bench-font text-bench-orange text-xl font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="mt-8 mb-8 p-4">
         <h1 class="text-4xl font-bold text-gray-800">🪑 Recherche de banc</h1>
         <p class="text-gray-600 mt-2">Découvrez des endroits confortables à travers le monde</p>
-    </nav>
-    
+    </div>
+
     <div class="flex flex-col md:flex-row gap-8">
         <!-- Map Section -->
         <div class="w-full md:w-2/3 bg-white p-4 rounded-lg shadow-md">
@@ -109,7 +113,7 @@
     <script>
         // Initialize the map
         const map = L.map('map').setView([20, 0], 2);
-        
+
         // Add OpenStreetMap tiles
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
@@ -162,29 +166,30 @@
         // Create the bench cards
         createBenchCards();
     </script>
- <footer class="">
+    <footer class="">
         <div class="container mx-auto py-2 flex justify-between items-center border-t-2 mt-4">
             <a href="index.html"><img class="w-20 " src=" img/logo-bench-shop.png" alt="Bench Shop Logo"> </a>
             <nav>
                 <ul class="flex space-x-12">
                     <li><a href="index.html"
-                            class="relative font-bench-font text-gray-700 text-sm font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">Accueil</a>
+                            class="relative font-bench-font text-bench-orange text-sm font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">Accueil</a>
                     </li>
                     <li><a href="products.html"
-                            class="relative font-bench-font text-gray-700 text-sm font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">Nos
+                            class="relative font-bench-font text-bench-orange text-sm font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">Nos
                             bancs</a></li>
                     <li><a href="map.html"
-                            class="relative font-bench-font text-gray-700 text-sm font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">Map</a>
+                            class="relative font-bench-font text-bench-orange text-sm font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">Map</a>
                     </li>
                     <li><a href="aboutus.html"
-                            class="relative font-bench-font text-gray-700 text-sm font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">À
+                            class="relative font-bench-font text-bench-orange text-sm font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">À
                             propos</a></li>
                     <li><a href="contact.html"
-                            class="relative font-bench-font text-gray-700 text-sm font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">Contact</a>
+                            class="relative font-bench-font text-bench-orange text-sm font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">Contact</a>
                     </li>
                 </ul>
             </nav>
         </div>
     </footer>
 </body>
+
 </html>
