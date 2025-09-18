@@ -212,6 +212,99 @@
             });
         }
 
+document.addEventListener('DOMContentLoaded', function() {
+    const { animate } = Motion;
+
+    // Config for each button
+    const buttonConfigs = {
+        "decouvrir-btn": { 
+            x: [-50, 0], 
+            delay: 0.5, 
+            flip: [0, 180, 0],  // Flip then return
+            isLink: false       // stays on page
+        },
+        "carte-btn": { 
+            x: [50, 0], 
+            delay: 0.7, 
+            flip: [0, -180, 0], // Flip then return
+            isLink: true        // navigates away
+        }
+    };
+
+    Object.entries(buttonConfigs).forEach(([id, cfg]) => {
+        const btn = document.getElementById(id);
+        let hoverAnimation;
+
+        // Initial entrance animation
+        animate(
+            `#${id}`,
+            { opacity: [0, 1], x: cfg.x, scale: [0.8, 1] },
+            { duration: 0.8, delay: cfg.delay, easing: "spring(1, 80, 10, 0)" }
+        );
+
+        // Hover in
+        btn.addEventListener("mouseenter", function () {
+            if (hoverAnimation) hoverAnimation.stop();
+
+            animate(this,
+                {
+                    scale: 1.1,
+                    rotateZ: id === "decouvrir-btn" ? [-2, 2, -1, 1, 0] : [2, -2, 1, -1, 0],
+                    boxShadow: "0 10px 30px rgba(230, 147, 54, 0.4)"
+                },
+                { duration: 0.6, easing: "ease-out" }
+            );
+
+            // Floating animation
+            hoverAnimation = animate(this,
+                { y: [-2, 2, -2] },
+                { duration: 1.5, repeat: Infinity, easing: "ease-in-out" }
+            );
+        });
+
+        // Hover out
+        btn.addEventListener("mouseleave", function () {
+            if (hoverAnimation) hoverAnimation.stop();
+
+            animate(this,
+                {
+                    scale: 1,
+                    rotateZ: 0,
+                    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)"
+                },
+                { duration: 0.4, easing: "ease-out" }
+            );
+        });
+
+        // Click animation
+        btn.addEventListener("click", function (e) {
+            if (cfg.isLink) {
+                e.preventDefault(); // stop immediate navigation
+            }
+
+            animate(this,
+                {
+                    scale: [1, 0.9, 1],
+                    rotateZ: cfg.flip
+                },
+                { duration: 0.6, easing: "ease-in-out" }
+            );
+
+            if (cfg.isLink) {
+                const url = this.getAttribute("href");
+                if (url) {
+                    setTimeout(() => { window.location.href = url; }, 1200); // delay until animation ends
+                }
+            } else {
+                // Scroll after animation ends
+                setTimeout(() => {
+                    window.scrollBy({ 
+                        top: window.innerHeight, // scroll down one viewport
+                        behavior: "smooth" 
+                    });
+                }, 600); // wait for animation
+            }
+=======
         // Motion.dev animations for buttons
         document.addEventListener('DOMContentLoaded', function () {
             const { animate, timeline, stagger } = Motion;
@@ -388,7 +481,12 @@
                     }
                 );
             }, 3000);
+  
         });
+    });
+});
+
+
     </script>
 </body>
 
