@@ -79,9 +79,9 @@
     </style>
 </head>
 
-<body class="min-h-screen flex flex-col">
+<body class=" mx-auto">
     <header>
-        <div class="container mx-auto flex justify-between items-center border-b-2 ">
+        <div class="mb-20 container mx-auto flex justify-between items-center border-b-2 ">
             <a href="index.html"><img class="w-40 " src=" img/logo-bench-shop.png" alt="Bench Shop Logo"> </a>
             <nav>
                 <ul class="flex space-x-12">
@@ -105,20 +105,12 @@
         </div>
     </header>
 
-    <main class="flex-grow py-8 mx-20">
+    <div class="max-w-7xl mx-auto px-4">
         <div class="mt-8 mb-8 p-4">
             <h1 class="text-4xl font-bold text-gray-800">🪑 Recherche de banc</h1>
             <p class="text-gray-600 mt-2">Découvrez des endroits confortables à travers le monde</p>
         </div>
 
-        <!-- Benches Section -->
-        <div class="w-full md:w-1/3">
-            <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-bench-orange">
-                <h2 class="text-2xl font-semibold mb-6 text-bench-orange font-bench-font">
-                    🌍 Nos Bancs Mondiaux
-                </h2>
-                <div class="space-y-4 max-h-[500px] overflow-y-auto pr-2">
-                    <!-- Dynamic bench cards will be inserted here -->
         <div class="flex flex-col md:flex-row gap-8">
             <!-- Map Section -->
             <div class="w-full md:w-2/3 bg-white p-4 rounded-lg shadow-md">
@@ -128,39 +120,21 @@
 
             <!-- Benches Section -->
             <div class="w-full md:w-1/3">
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h2 class="text-2xl font-semibold mb-6 text-gray-800">Global Benches</h2>
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-bench-orange">
+                    <h2 class="text-2xl font-semibold mb-6 text-bench-orange font-bench-font">
+                        🌍 Nos Bancs Mondiaux
+                    </h2>
                     <div class="space-y-4 max-h-[500px] overflow-y-auto pr-2">
                         <!-- Dynamic bench cards will be inserted here -->
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
 
-    <footer class="mt-auto">
-        <div class="container mx-auto py-2 flex justify-between items-center border-t-2 mt-4">
-            <a href="index.html"><img class="w-20 " src=" img/logo-bench-shop.png" alt="Bench Shop Logo"> </a>
-            <nav>
-                <ul class="flex space-x-12">
-                    <li><a href="index.html"
-                            class="relative font-bench-font text-bench-orange text-sm font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">Accueil</a>
-                    </li>
-                    <li><a href="products.html"
-                            class="relative font-bench-font text-bench-orange text-sm font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">Nos
-                            bancs</a></li>
-                    <li><a href="map.html"
-                            class="relative font-bench-font text-bench-orange text-sm font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">Map</a>
-                    </li>
-                    <li><a href="aboutus.html"
-                            class="relative font-bench-font text-bench-orange text-sm font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">À
-                            propos</a></li>
-                    <li><a href="contact.html"
-                            class="relative font-bench-font text-bench-orange text-sm font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+
+    <footer class="mt-8 text-center text-gray-600">
+        <p>© 2025 Bench Finder. All benches reserved.</p>
     </footer>
 
     <script>
@@ -175,80 +149,80 @@
 
         // Updated benches list with your locations
         const benches = [
-            { 
-                lat: 50.6292, 
-                lng: 3.0573, 
-                name: "La Centure", 
+            {
+                lat: 50.6292,
+                lng: 3.0573,
+                name: "La Centure",
                 location: "Lille, France",
                 page: "bench-la-centure.html"
             },
-            { 
-                lat: 50.6365, 
-                lng: 3.0635, 
-                name: "La Moderne", 
+            {
+                lat: 50.6365,
+                lng: 3.0635,
+                name: "La Moderne",
                 location: "Lille, France",
                 page: "bench-la-moderne.html"
             },
-            { 
-                lat: 50.6311, 
-                lng: 3.0574, 
-                name: "Le Jardin Secret", 
+            {
+                lat: 50.6311,
+                lng: 3.0574,
+                name: "Le Jardin Secret",
                 location: "Lille, France",
                 page: "bench-le-jardin-secret.html"
             },
-            { 
-                lat: 48.8566, 
-                lng: 2.3522, 
-                name: "La Promenade", 
+            {
+                lat: 48.8566,
+                lng: 2.3522,
+                name: "La Promenade",
                 location: "Paris, France",
                 page: "bench-la-promenade.html"
             },
-            { 
-                lat: 43.2965, 
-                lng: 5.3698, 
-                name: "Le Méditerranéen", 
+            {
+                lat: 43.2965,
+                lng: 5.3698,
+                name: "Le Méditerranéen",
                 location: "Marseille, France",
                 page: "bench-le-mediterraneen.html"
             },
-            { 
-                lat: 44.8378, 
-                lng: -0.5792, 
-                name: "Le Bordelais", 
+            {
+                lat: 44.8378,
+                lng: -0.5792,
+                name: "Le Bordelais",
                 location: "Bordeaux, France",
                 page: "bench-le-bordelais.html"
             },
-            { 
-                lat: 40.7829, 
-                lng: -73.9654, 
-                name: "Le Banc de Central Park", 
+            {
+                lat: 40.7829,
+                lng: -73.9654,
+                name: "Le Banc de Central Park",
                 location: "New York, USA",
                 page: "bench-central-park.html"
             },
-            { 
-                lat: 35.6938, 
-                lng: 139.7036, 
-                name: "Le Coin de Shinjuku", 
+            {
+                lat: 35.6938,
+                lng: 139.7036,
+                name: "Le Coin de Shinjuku",
                 location: "Tokyo, Japan",
                 page: "bench-shinjuku.html"
             },
-            { 
-                lat: 51.5074, 
-                lng: -0.1658, 
-                name: "Retraite de Hyde Park", 
+            {
+                lat: 51.5074,
+                lng: -0.1658,
+                name: "Retraite de Hyde Park",
                 location: "Londres, UK",
                 page: "bench-hyde-park.html"
             },
-            { 
-                lat: -33.8568, 
-                lng: 151.2153, 
-                name: "Siège de Port de Sydney", 
+            {
+                lat: -33.8568,
+                lng: 151.2153,
+                name: "Siège de Port de Sydney",
                 location: "Sydney, Australia",
                 page: "bench-sydney-port.html"
             },
-            { 
-                lat: -22.9068, 
-                lng: -43.1729, 
-                name: "Coucher de Soleil", 
+            {
+                lat: -22.9068,
+                lng: -43.1729,
+                name: "Coucher de Soleil",
                 location: "Rio de Janeiro, Brazil",
                 page: "bench-rio-sunset.html"
             }
@@ -315,7 +289,7 @@
         // Create the bench cards
         createBenchCards();
     </script>
-    
+
     <footer class="">
         <div class="container mx-auto py-2 flex justify-between items-center border-t-2 mt-4">
             <a href="index.html"><img class="w-20 " src=" img/logo-bench-shop.png" alt="Bench Shop Logo"> </a>
