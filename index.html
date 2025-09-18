@@ -13,6 +13,8 @@
         rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/motion@11.11.17/dist/motion.js"></script>
+    
     <script>
         tailwind.config = {
             theme: {
@@ -31,7 +33,31 @@
         }
     </script>
 
-
+    <style>
+        .hero-button {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s;
+        }
+        
+        .hero-button:hover::before {
+            left: 100%;
+        }
+        
+        .button-glow {
+            box-shadow: 0 0 20px rgba(230, 147, 54, 0.4);
+        }
+    </style>
 </head>
 
 <body class="max-w-7xl mx-auto">
@@ -71,11 +97,14 @@
                 <h1 class="text-4xl font-bold text-white mb-4 drop-shadow-lg">Bienvenue chez Bench Shop</h1>
                 <p class="text-xl text-white mb-8 drop-shadow-md">Découvrez notre collection exceptionnelle</p>
                 <div class="flex justify-center gap-4">
-                    <button onclick="scrollToProducts()"
-                        class="bg-bench-orange text-white px-6 py-3 rounded-xl shadow-md transition-all duration-300 hover:bg-opacity-90 hover:transform hover:scale-105 hover:shadow-lg">Découvrir</button>
-                    <a href="map.html"
-                        class="bg-bench-orange text-white px-6 py-3 rounded-xl shadow-md transition-all duration-300 hover:bg-opacity-90 hover:transform hover:scale-105 hover:shadow-lg">Voir
-                        la Carte</a>
+                    <button id="decouvrir-btn" onclick="scrollToProducts()"
+                        class="hero-button bg-bench-orange text-white px-6 py-3 rounded-xl shadow-md transition-all duration-300 hover:bg-opacity-90 hover:transform hover:scale-105 hover:shadow-lg">
+                        <span class="relative z-10">Découvrir</span>
+                    </button>
+                    <a id="carte-btn" href="map.html"
+                        class="hero-button bg-bench-orange text-white px-6 py-3 rounded-xl shadow-md transition-all duration-300 hover:bg-opacity-90 hover:transform hover:scale-105 hover:shadow-lg">
+                        <span class="relative z-10">Voir la Carte</span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -175,17 +204,192 @@
             </nav>
         </div>
     </footer>
+    
     <script>
         function scrollToProducts() {
             document.getElementById('products').scrollIntoView({
                 behavior: 'smooth'
             });
         }
+
+        // Motion.dev animations for buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            const { animate, timeline, stagger } = Motion;
+
+            // Initial animation when page loads
+            animate("#decouvrir-btn", 
+                { 
+                    opacity: [0, 1], 
+                    x: [-50, 0],
+                    scale: [0.8, 1]
+                }, 
+                { 
+                    duration: 0.8, 
+                    delay: 0.5,
+                    easing: "spring(1, 80, 10, 0)"
+                }
+            );
+
+            animate("#carte-btn", 
+                { 
+                    opacity: [0, 1], 
+                    x: [50, 0],
+                    scale: [0.8, 1]
+                }, 
+                { 
+                    duration: 0.8, 
+                    delay: 0.7,
+                    easing: "spring(1, 80, 10, 0)"
+                }
+            );
+
+            // Enhanced hover animations for Découvrir button
+            const decouvrirBtn = document.getElementById('decouvrir-btn');
+            let hoverAnimation;
+            
+            decouvrirBtn.addEventListener('mouseenter', function() {
+                // Stop any click animations
+                animate(this, { scale: 1 }, { duration: 0.1 });
+                
+                animate(this, 
+                    { 
+                        scale: 1.1,
+                        rotateZ: [-2, 2, -1, 1, 0],
+                        boxShadow: "0 10px 30px rgba(230, 147, 54, 0.4)"
+                    }, 
+                    { 
+                        duration: 0.6,
+                        easing: "ease-out"
+                    }
+                );
+                
+                // Pulse effect
+                hoverAnimation = animate(this, 
+                    { scale: [1.1, 1.15, 1.1] }, 
+                    { 
+                        duration: 0.3,
+                        repeat: Infinity,
+                        direction: "alternate"
+                    }
+                );
+            });
+
+            decouvrirBtn.addEventListener('mouseleave', function() {
+                // Stop hover animations
+                if (hoverAnimation) hoverAnimation.stop();
+                
+                animate(this, 
+                    { 
+                        scale: 1,
+                        rotateZ: 0,
+                        boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)"
+                    }, 
+                    { 
+                        duration: 0.4,
+                        easing: "ease-out"
+                    }
+                );
+            });
+
+            decouvrirBtn.addEventListener('click', function() {
+                // Stop any ongoing animations first
+                animate(this, 
+                    { 
+                        scale: [1, 0.8, 1.3, 1],
+                        rotateY: [0, 180, 360],
+                        backgroundColor: ["#E69336", "#95B976", "#E69336"]
+                    }, 
+                    { 
+                        duration: 0.8,
+                        easing: "ease-out"
+                    }
+                );
+            });
+
+            // Hover animations for Voir la Carte button
+            const carteBtn = document.getElementById('carte-btn');
+            
+            carteBtn.addEventListener('mouseenter', function() {
+                animate(this, 
+                    { 
+                        scale: 1.1,
+                        rotateZ: [2, -2, 1, -1, 0],
+                        boxShadow: "0 10px 30px rgba(149, 185, 118, 0.4)",
+                        backgroundColor: "#95B976"
+                    }, 
+                    { 
+                        duration: 0.6,
+                        easing: "ease-out"
+                    }
+                );
+
+                // Floating animation
+                animate(this, 
+                    { y: [-2, 2, -2] }, 
+                    { 
+                        duration: 1.5,
+                        repeat: Infinity,
+                        easing: "ease-in-out"
+                    }
+                );
+            });
+
+            carteBtn.addEventListener('mouseleave', function() {
+                animate(this, 
+                    { 
+                        scale: 1,
+                        rotateZ: 0,
+                        y: 0,
+                        boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+                        backgroundColor: "#E69336"
+                    }, 
+                    { 
+                        duration: 0.4,
+                        easing: "ease-out"
+                    }
+                );
+            });
+
+            carteBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // More dramatic click animation
+                animate(this, 
+                    { 
+                        scale: [1, 0.7, 1.4, 1],
+                        rotateZ: [0, 360],
+                        backgroundColor: ["#E69336", "#ff6b35", "#95B976", "#E69336"]
+                    }, 
+                    { 
+                        duration: 1,
+                        easing: "ease-out"
+                    }
+                ).then(() => {
+                    // Add a small delay to see the animation complete
+                    setTimeout(() => {
+                        window.location.href = 'map.html';
+                    }, 200);
+                });
+            });
+
+            // Continuous subtle animation
+            setInterval(() => {
+                animate("#decouvrir-btn", 
+                    { 
+                        boxShadow: [
+                            "0 4px 6px rgba(230, 147, 54, 0.1)",
+                            "0 6px 12px rgba(230, 147, 54, 0.2)",
+                            "0 4px 6px rgba(230, 147, 54, 0.1)"
+                        ]
+                    }, 
+                    { 
+                        duration: 2,
+                        easing: "ease-in-out"
+                    }
+                );
+            }, 3000);
+        });
     </script>
 </body>
-
-
-</main>
-
 
 </html>
