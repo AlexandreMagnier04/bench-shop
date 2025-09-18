@@ -212,183 +212,103 @@
             });
         }
 
-        // Motion.dev animations for buttons
-        document.addEventListener('DOMContentLoaded', function() {
-            const { animate, timeline, stagger } = Motion;
+document.addEventListener('DOMContentLoaded', function() {
+    const { animate } = Motion;
 
-            // Initial animation when page loads
-            animate("#decouvrir-btn", 
-                { 
-                    opacity: [0, 1], 
-                    x: [-50, 0],
-                    scale: [0.8, 1]
-                }, 
-                { 
-                    duration: 0.8, 
-                    delay: 0.5,
-                    easing: "spring(1, 80, 10, 0)"
-                }
+    // Config for each button
+    const buttonConfigs = {
+        "decouvrir-btn": { 
+            x: [-50, 0], 
+            delay: 0.5, 
+            flip: [0, 180, 0],  // Flip then return
+            isLink: false       // stays on page
+        },
+        "carte-btn": { 
+            x: [50, 0], 
+            delay: 0.7, 
+            flip: [0, -180, 0], // Flip then return
+            isLink: true        // navigates away
+        }
+    };
+
+    Object.entries(buttonConfigs).forEach(([id, cfg]) => {
+        const btn = document.getElementById(id);
+        let hoverAnimation;
+
+        // Initial entrance animation
+        animate(
+            `#${id}`,
+            { opacity: [0, 1], x: cfg.x, scale: [0.8, 1] },
+            { duration: 0.8, delay: cfg.delay, easing: "spring(1, 80, 10, 0)" }
+        );
+
+        // Hover in
+        btn.addEventListener("mouseenter", function () {
+            if (hoverAnimation) hoverAnimation.stop();
+
+            animate(this,
+                {
+                    scale: 1.1,
+                    rotateZ: id === "decouvrir-btn" ? [-2, 2, -1, 1, 0] : [2, -2, 1, -1, 0],
+                    boxShadow: "0 10px 30px rgba(230, 147, 54, 0.4)"
+                },
+                { duration: 0.6, easing: "ease-out" }
             );
 
-            animate("#carte-btn", 
-                { 
-                    opacity: [0, 1], 
-                    x: [50, 0],
-                    scale: [0.8, 1]
-                }, 
-                { 
-                    duration: 0.8, 
-                    delay: 0.7,
-                    easing: "spring(1, 80, 10, 0)"
-                }
+            // Floating animation
+            hoverAnimation = animate(this,
+                { y: [-2, 2, -2] },
+                { duration: 1.5, repeat: Infinity, easing: "ease-in-out" }
             );
-
-            // Enhanced hover animations for Découvrir button
-            const decouvrirBtn = document.getElementById('decouvrir-btn');
-            let hoverAnimation;
-            
-            decouvrirBtn.addEventListener('mouseenter', function() {
-                // Stop any click animations
-                animate(this, { scale: 1 }, { duration: 0.1 });
-                
-                animate(this, 
-                    { 
-                        scale: 1.1,
-                        rotateZ: [-2, 2, -1, 1, 0],
-                        boxShadow: "0 10px 30px rgba(230, 147, 54, 0.4)"
-                    }, 
-                    { 
-                        duration: 0.6,
-                        easing: "ease-out"
-                    }
-                );
-                
-                // Pulse effect
-                hoverAnimation = animate(this, 
-                    { scale: [1.1, 1.15, 1.1] }, 
-                    { 
-                        duration: 0.3,
-                        repeat: Infinity,
-                        direction: "alternate"
-                    }
-                );
-            });
-
-            decouvrirBtn.addEventListener('mouseleave', function() {
-                // Stop hover animations
-                if (hoverAnimation) hoverAnimation.stop();
-                
-                animate(this, 
-                    { 
-                        scale: 1,
-                        rotateZ: 0,
-                        boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)"
-                    }, 
-                    { 
-                        duration: 0.4,
-                        easing: "ease-out"
-                    }
-                );
-            });
-
-            decouvrirBtn.addEventListener('click', function() {
-                // Stop any ongoing animations first
-                animate(this, 
-                    { 
-                        scale: [1, 0.8, 1.3, 1],
-                        rotateY: [0, 180, 360],
-                        backgroundColor: ["#E69336", "#95B976", "#E69336"]
-                    }, 
-                    { 
-                        duration: 0.8,
-                        easing: "ease-out"
-                    }
-                );
-            });
-
-            // Hover animations for Voir la Carte button
-            const carteBtn = document.getElementById('carte-btn');
-            
-            carteBtn.addEventListener('mouseenter', function() {
-                animate(this, 
-                    { 
-                        scale: 1.1,
-                        rotateZ: [2, -2, 1, -1, 0],
-                        boxShadow: "0 10px 30px rgba(149, 185, 118, 0.4)",
-                        backgroundColor: "#95B976"
-                    }, 
-                    { 
-                        duration: 0.6,
-                        easing: "ease-out"
-                    }
-                );
-
-                // Floating animation
-                animate(this, 
-                    { y: [-2, 2, -2] }, 
-                    { 
-                        duration: 1.5,
-                        repeat: Infinity,
-                        easing: "ease-in-out"
-                    }
-                );
-            });
-
-            carteBtn.addEventListener('mouseleave', function() {
-                animate(this, 
-                    { 
-                        scale: 1,
-                        rotateZ: 0,
-                        y: 0,
-                        boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-                        backgroundColor: "#E69336"
-                    }, 
-                    { 
-                        duration: 0.4,
-                        easing: "ease-out"
-                    }
-                );
-            });
-
-            carteBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // More dramatic click animation
-                animate(this, 
-                    { 
-                        scale: [1, 0.7, 1.4, 1],
-                        rotateZ: [0, 360],
-                        backgroundColor: ["#E69336", "#ff6b35", "#95B976", "#E69336"]
-                    }, 
-                    { 
-                        duration: 1,
-                        easing: "ease-out"
-                    }
-                ).then(() => {
-                    // Add a small delay to see the animation complete
-                    setTimeout(() => {
-                        window.location.href = 'map.html';
-                    }, 200);
-                });
-            });
-
-            // Continuous subtle animation
-            setInterval(() => {
-                animate("#decouvrir-btn", 
-                    { 
-                        boxShadow: [
-                            "0 4px 6px rgba(230, 147, 54, 0.1)",
-                            "0 6px 12px rgba(230, 147, 54, 0.2)",
-                            "0 4px 6px rgba(230, 147, 54, 0.1)"
-                        ]
-                    }, 
-                    { 
-                        duration: 2,
-                        easing: "ease-in-out"
-                    }
-                );
-            }, 3000);
         });
+
+        // Hover out
+        btn.addEventListener("mouseleave", function () {
+            if (hoverAnimation) hoverAnimation.stop();
+
+            animate(this,
+                {
+                    scale: 1,
+                    rotateZ: 0,
+                    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)"
+                },
+                { duration: 0.4, easing: "ease-out" }
+            );
+        });
+
+        // Click animation
+        btn.addEventListener("click", function (e) {
+            if (cfg.isLink) {
+                e.preventDefault(); // stop immediate navigation
+            }
+
+            animate(this,
+                {
+                    scale: [1, 0.9, 1],
+                    rotateZ: cfg.flip
+                },
+                { duration: 0.6, easing: "ease-in-out" }
+            );
+
+            if (cfg.isLink) {
+                const url = this.getAttribute("href");
+                if (url) {
+                    setTimeout(() => { window.location.href = url; }, 1200); // delay until animation ends
+                }
+            } else {
+                // Scroll after animation ends
+                setTimeout(() => {
+                    window.scrollBy({ 
+                        top: window.innerHeight, // scroll down one viewport
+                        behavior: "smooth" 
+                    });
+                }, 600); // wait for animation
+            }
+        });
+    });
+});
+
+
     </script>
 </body>
 </html>
