@@ -107,14 +107,14 @@
 
     <div class="max-w-7xl mx-auto px-4">
         <div class="mt-8 mb-8 p-4">
-            <h1 class="text-4xl font-bold text-gray-800">🪑 Recherche de banc</h1>
+            <h1 class="text-4xl font-bold text-bench-green font-bench-font">🪑 Recherche de banc</h1>
             <p class="text-gray-600 mt-2">Découvrez des endroits confortables à travers le monde</p>
         </div>
 
         <div class="flex flex-col md:flex-row gap-8">
             <!-- Map Section -->
             <div class="w-full md:w-2/3 bg-white p-4 rounded-lg shadow-md">
-                <h2 class="text-2xl font-semibold mb-4 text-gray-800">Interactive Map</h2>
+                <h2 class="text-2xl font-semibold mb-4 text-bench-orange font-bench-font">Interactive Map</h2>
                 <div id="map"></div>
             </div>
 
@@ -139,92 +139,122 @@
 
     <script>
         // Initialize the map
-        const map = L.map('map').setView([20, 0], 2);
+        const map = L.map('map').setView([50.6292, 3.0573], 13);
 
         // Add OpenStreetMap tiles
-        L.tileLayer('https://{s}.tile.openstreetMap.org/{z}/{x}/{y}.png', {
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '© OpenStreetMap contributors'
         }).addTo(map);
 
-        // Updated benches list with your locations
+        // Updated benches list with Lille benches added
         const benches = [
             {
                 lat: 50.6292,
                 lng: 3.0573,
                 name: "Le Centure",
                 location: "Lille, France",
-                page: "bench-le-centure.html"
+                page: "produit1.html"
             },
             {
                 lat: 50.6365,
                 lng: 3.0635,
                 name: "Le Moderne",
                 location: "Lille, France",
-                page: "bench-le-moderne.html"
+                page: "produit2.html"
             },
             {
                 lat: 50.6311,
                 lng: 3.0574,
                 name: "Le Jardin Secret",
                 location: "Lille, France",
-                page: "bench-le-jardin-secret.html"
+                page: "produit3.html"
             },
             {
                 lat: 48.8566,
                 lng: 2.3522,
                 name: "La Promenade",
                 location: "Paris, France",
-                page: "bench-la-promenade.html"
+                page: "produit4.html"
             },
             {
                 lat: 43.2965,
                 lng: 5.3698,
                 name: "Le Méditerranéen",
                 location: "Marseille, France",
-                page: "bench-le-mediterraneen.html"
+                page: "produit5.html"
             },
             {
                 lat: 44.8378,
                 lng: -0.5792,
                 name: "Le Bordelais",
                 location: "Bordeaux, France",
-                page: "bench-le-bordelais.html"
+                page: "produit6.html"
             },
             {
                 lat: 40.7829,
                 lng: -73.9654,
                 name: "Le Banc de Central Park",
                 location: "New York, USA",
-                page: "bench-central-park.html"
+                page: "produit7.html"
             },
             {
                 lat: 35.6938,
                 lng: 139.7036,
                 name: "Le Coin de Shinjuku",
                 location: "Tokyo, Japan",
-                page: "bench-shinjuku.html"
+                page: "produit8.html"
             },
             {
                 lat: 51.5074,
                 lng: -0.1658,
                 name: "Retraite de Hyde Park",
                 location: "Londres, UK",
-                page: "bench-hyde-park.html"
+                page: "produit9.html"
             },
             {
                 lat: -33.8568,
                 lng: 151.2153,
                 name: "Siège de Port de Sydney",
                 location: "Sydney, Australia",
-                page: "bench-sydney-port.html"
+                page: "produit10.html"
             },
             {
                 lat: -22.9068,
                 lng: -43.1729,
                 name: "Coucher de Soleil",
                 location: "Rio de Janeiro, Brazil",
-                page: "bench-rio-sunset.html"
+                page: "produit11.html"
+            },
+
+            // ✅ New Lille benches
+            {
+                lat: 50.6372,
+                lng: 3.0629,
+                name: "Le Vieux-Lille",
+                location: "Lille, France",
+                page: "produit12.html"
+            },
+            {
+                lat: 50.6341,
+                lng: 3.0465,
+                name: "Le Parc de la Citadelle",
+                location: "Lille, France",
+                page: "produit13.html"
+            },
+            {
+                lat: 50.6266,
+                lng: 3.0701,
+                name: "Le Banc de la Grand’Place",
+                location: "Lille, France",
+                page: "produit14.html"
+            },
+            {
+                lat: 50.6298,
+                lng: 3.0612,
+                name: "Le Banc du Beffroi",
+                location: "Lille, France",
+                page: "produit15.html"
             }
         ];
 
