@@ -34,14 +34,14 @@
 
 </head>
 
-<body class="max-w-7xl mx-auto">
+<body class="min-h-screen flex flex-col">
     <header>
-        <div class="mb-20 container mx-auto flex justify-between items-center border-b-2 ">
+        <div class="container mx-auto flex justify-between items-center border-b-2 ">
             <a href="index.html"><img class="w-40 " src=" img/logo-bench-shop.png" alt="Bench Shop Logo"> </a>
             <nav>
                 <ul class="flex space-x-12">
                     <li><a href="index.html"
-                            class="relative font-bench-font text-bench-orange text-xl font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">Accueil</a>
+                            class="relative font-bench-font text-bench-green text-xl font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-full before:h-0.5 before:bottom-0 before:left-0 before:bg-bench-green before:transition-all before:duration-300">Accueil</a>
                     </li>
                     <li><a href="products.html"
                             class="relative font-bench-font text-bench-orange text-xl font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">Nos
@@ -60,10 +60,10 @@
         </div>
     </header>
 
-    <main>
+    <main class="flex-grow py-20">
 
         <section
-            class="hero relative bg-gray-50 py-16 bg-cover bg-center bg-no-repeat min-h-[500px] flex items-center rounded-xl overflow-hidden"
+            class="hero relative bg-gray-50 py-16 bg-cover bg-center bg-no-repeat min-h-[500px] flex items-center rounded-xl overflow-hidden max-w-7xl mx-auto"
             style="background-image: url('img/background-hero.png');">
             <div class="absolute inset-0 bg-black bg-opacity-40"></div>
 
@@ -80,7 +80,7 @@
             </div>
         </section>
 
-        <section id="products" class="products py-16">
+        <section id="products" class="products mt-16">
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl font-bold text-center mb-8">Nos Produits</h2>
                 <div class="max-w-6xl mx-auto">
@@ -88,50 +88,50 @@
                     </h1>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                        <a href="productpage.html" class="group">
+                        <a href="produit1.html" class="group">
                             <div class="space-y-2">
                                 <div class="w-full aspect-square overflow-hidden rounded-lg shadow-md">
                                     <img src="img/bench 1 image 1.jpg" alt="Bench 1"
                                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                                 </div>
-                                <h3 class="text-lg font-semibold text-gray-800">La Centaure</h3>
-                            </div>
-                        </a>
-
-                        <a href="produit1.html" class="group">
-                            <div class="space-y-2">
-                                <div class="w-full aspect-square overflow-hidden rounded-lg shadow-md">
-                                    <img src="img/bench 2 image 1.jpeg" alt="Bench 2"
-                                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                                </div>
-                                <h3 class="text-lg font-semibold text-gray-800">La Moderne</h3>
+                                <h3 class="text-lg font-semibold text-gray-800">Le Centaure</h3>
                             </div>
                         </a>
 
                         <a href="produit2.html" class="group">
                             <div class="space-y-2">
                                 <div class="w-full aspect-square overflow-hidden rounded-lg shadow-md">
-                                    <img src="img/bench 3 image 1.jpg" alt="Bench 3"
+                                    <img src="img/bench 2 image 1.jpeg" alt="Bench 2"
                                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                                 </div>
-                                <h3 class="text-lg font-semibold text-gray-800">La Vintage</h3>
+                                <h3 class="text-lg font-semibold text-gray-800">Le Moderne</h3>
                             </div>
                         </a>
 
                         <a href="produit3.html" class="group">
                             <div class="space-y-2">
                                 <div class="w-full aspect-square overflow-hidden rounded-lg shadow-md">
-                                    <img src="img/La Promenade3.jpg" alt="Bench 5"
+                                    <img src="img/bench 3 image 1.jpg" alt="Bench 3"
                                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                                 </div>
-                                <h3 class="text-lg font-semibold text-gray-800">La Royale</h3>
+                                <h3 class="text-lg font-semibold text-gray-800">Le Jardin Secret</h3>
                             </div>
                         </a>
 
                         <a href="produit4.html" class="group">
                             <div class="space-y-2">
                                 <div class="w-full aspect-square overflow-hidden rounded-lg shadow-md">
-                                    <img src="img/Le Méditerranéen1.jpeg" alt="Bench 4"
+                                    <img src="img/La Promenade2.webp" alt="Bench 4"
+                                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800">La Promenade</h3>
+                            </div>
+                        </a>
+
+                        <a href="produit5.html" class="group">
+                            <div class="space-y-2">
+                                <div class="w-full aspect-square overflow-hidden rounded-lg shadow-md">
+                                    <img src="img/Le Méditerranéen1.jpeg" alt="Bench 5"
                                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                                 </div>
                                 <h3 class="text-lg font-semibold text-gray-800">Le Méditerranéen</h3>
@@ -141,7 +141,7 @@
                 </div>
             </div>
             <div class="container mx-auto px-4">
-                <div class="text-center py-8 mb-8">
+                <div class="text-center mt-8">
                     <a href="products.html"
                         class="inline-block px-8 py-3 bg-bench-green text-white font-bench-font text-lg font-semibold rounded-lg transition-all duration-300 hover:bg-opacity-90 hover:transform hover:scale-105 hover:shadow-lg">
                         Voir tous nos bancs
@@ -151,7 +151,7 @@
         </section>
     </main>
 
-    <footer class="">
+    <footer class="mt-auto">
         <div class="container mx-auto py-2 flex justify-between items-center border-t-2 mt-4">
             <a href="index.html"><img class="w-20 " src=" img/logo-bench-shop.png" alt="Bench Shop Logo"> </a>
             <nav>
@@ -183,9 +183,6 @@
         }
     </script>
 </body>
-
-
-</main>
 
 
 </html>
