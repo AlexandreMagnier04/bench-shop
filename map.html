@@ -79,9 +79,9 @@
     </style>
 </head>
 
-<body class="max-w-7xl mx-auto">
+<body class="min-h-screen flex flex-col">
     <header>
-        <div class="mb-20 container mx-auto flex justify-between items-center border-b-2 ">
+        <div class="container mx-auto flex justify-between items-center border-b-2 ">
             <a href="index.html"><img class="w-40 " src=" img/logo-bench-shop.png" alt="Bench Shop Logo"> </a>
             <nav>
                 <ul class="flex space-x-12">
@@ -92,7 +92,7 @@
                             class="relative font-bench-font text-bench-orange text-xl font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">Nos
                             bancs</a></li>
                     <li><a href="map.html"
-                            class="relative font-bench-font text-bench-orange text-xl font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">Map</a>
+                            class="relative font-bench-font text-bench-green text-xl font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-full before:h-0.5 before:bottom-0 before:left-0 before:bg-bench-green before:transition-all before:duration-300">Map</a>
                     </li>
                     <li><a href="aboutus.html"
                             class="relative font-bench-font text-bench-orange text-xl font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">À
@@ -105,16 +105,10 @@
         </div>
     </header>
 
-    <div class="mt-8 mb-8 p-4">
-        <h1 class="text-4xl font-bold text-gray-800">🪑 Recherche de banc</h1>
-        <p class="text-gray-600 mt-2">Découvrez des endroits confortables à travers le monde</p>
-    </div>
-
-    <div class="flex flex-col md:flex-row gap-8">
-        <!-- Map Section -->
-        <div class="w-full md:w-2/3 bg-white p-4 rounded-lg shadow-md">
-            <h2 class="text-2xl font-semibold mb-4 text-gray-800">Interactive Map</h2>
-            <div id="map"></div>
+    <main class="flex-grow py-8 mx-20">
+        <div class="mt-8 mb-8 p-4">
+            <h1 class="text-4xl font-bold text-gray-800">🪑 Recherche de banc</h1>
+            <p class="text-gray-600 mt-2">Découvrez des endroits confortables à travers le monde</p>
         </div>
 
         <!-- Benches Section -->
@@ -125,13 +119,48 @@
                 </h2>
                 <div class="space-y-4 max-h-[500px] overflow-y-auto pr-2">
                     <!-- Dynamic bench cards will be inserted here -->
+        <div class="flex flex-col md:flex-row gap-8">
+            <!-- Map Section -->
+            <div class="w-full md:w-2/3 bg-white p-4 rounded-lg shadow-md">
+                <h2 class="text-2xl font-semibold mb-4 text-gray-800">Interactive Map</h2>
+                <div id="map"></div>
+            </div>
+
+            <!-- Benches Section -->
+            <div class="w-full md:w-1/3">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-semibold mb-6 text-gray-800">Global Benches</h2>
+                    <div class="space-y-4 max-h-[500px] overflow-y-auto pr-2">
+                        <!-- Dynamic bench cards will be inserted here -->
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
-    <footer class="mt-8 text-center text-gray-600">
-        <p>© 2025 Bench Finder. All benches reserved.</p>
+    <footer class="mt-auto">
+        <div class="container mx-auto py-2 flex justify-between items-center border-t-2 mt-4">
+            <a href="index.html"><img class="w-20 " src=" img/logo-bench-shop.png" alt="Bench Shop Logo"> </a>
+            <nav>
+                <ul class="flex space-x-12">
+                    <li><a href="index.html"
+                            class="relative font-bench-font text-bench-orange text-sm font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">Accueil</a>
+                    </li>
+                    <li><a href="products.html"
+                            class="relative font-bench-font text-bench-orange text-sm font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">Nos
+                            bancs</a></li>
+                    <li><a href="map.html"
+                            class="relative font-bench-font text-bench-orange text-sm font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">Map</a>
+                    </li>
+                    <li><a href="aboutus.html"
+                            class="relative font-bench-font text-bench-orange text-sm font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">À
+                            propos</a></li>
+                    <li><a href="contact.html"
+                            class="relative font-bench-font text-bench-orange text-sm font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </footer>
 
     <script>

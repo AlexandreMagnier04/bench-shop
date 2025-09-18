@@ -29,13 +29,16 @@
         }
     </script>
 
+    <!-- Add Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <!-- Add Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 </head>
 
-<body class="max-w-7xl mx-auto">
+<body class="min-h-screen flex flex-col">
     <header class="">
-        <div class="mb-20 container mx-auto flex justify-between items-center border-b-2 ">
+        <div class=" container mx-auto flex justify-between items-center border-b-2 ">
             <a href="index.html"><img class="w-40 " src=" img/logo-bench-shop.png" alt="Bench Shop Logo"> </a>
             <nav>
                 <ul class="flex space-x-12">
@@ -43,7 +46,7 @@
                             class="relative font-bench-font text-bench-orange text-xl font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">Accueil</a>
                     </li>
                     <li><a href="products.html"
-                            class="relative font-bench-font text-bench-orange text-xl font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">Nos
+                            class="relative font-bench-font text-bench-green text-xl font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-full before:h-0.5 before:bottom-0 before:left-0 before:bg-bench-green before:transition-all before:duration-300">Nos
                             bancs</a></li>
                     <li><a href="map.html"
                             class="relative font-bench-font text-bench-orange text-xl font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">Map</a>
@@ -58,92 +61,115 @@
             </nav>
         </div>
     </header>
-    <div class="container mx-auto px-4 py-8 max-w-7xl">
-        <div class="flex flex-col lg:flex-row gap-12">
-            <div class="w-full lg:w-3/5">
-                <div class="swiper mySwiper rounded-xl overflow-hidden shadow-lg">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="img/hp1.jpg" alt="Retraite de Hyde Park View 1"
-                                class="w-full h-[500px] object-cover">
+    <main class="flex-grow">
+        <div class="container mx-auto px-4 py-8 max-w-7xl">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="w-full lg:w-3/5">
+                    <div class="swiper mySwiper rounded-xl overflow-hidden shadow-lg">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="img/sc1.jpeg" alt="Le Coin de Shinjuku View 1"
+                                    class="w-full h-[500px] object-cover">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/sc2.jpg" alt="Le Coin de Shinjuku View 2"
+                                    class="w-full h-[500px] object-cover">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/sc3.jpg" alt="Le Coin de Shinjuku View 3"
+                                    class="w-full h-[500px] object-cover">
+                            </div>
                         </div>
-                        <div class="swiper-slide">
-                            <img src="img/hp2.jpeg" alt="Retraite de Hyde Park View 2"
-                                class="w-full h-[500px] object-cover">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="img/hp3.jpg" alt="Retraite de Hyde Park View 3"
-                                class="w-full h-[500px] object-cover">
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-2/5 space-y-6">
+                    <h1 class="text-3xl font-bold text-bench-green font-bench-font">Le Coin de Shinjuku</h1>
+                    <p class="text-xl text-gray-600">Tokyo, Japon</p>
+
+                    <div class="flex items-center gap-4">
+                        <span class="text-2xl font-bold text-gray-900">¥2500/30min</span>
+                        <div class="flex items-center gap-2">
+                            <div class="flex"><svg class="w-5 h-5 text-yellow-400" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path
+                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg><svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg><svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg><svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg><svg class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg></div>
+                            <span class="text-gray-600">(312 avis)</span>
                         </div>
                     </div>
-                    <div class="swiper-pagination"></div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
+
+                    <div class="border-t border-gray-200 pt-6">
+                        <h2 class="text-xl font-semibold mb-4 text-bench-orange font-bench-font">Description</h2>
+                        <p class="text-gray-600 leading-relaxed">Un banc cosy caché dans les jardins de Shinjuku Gyoen,
+                            idéal pour la contemplation et la détente.</p>
+                    </div>
+
+                    <button
+                        class="w-full bg-bench-green text-white py-3 px-6 rounded-lg font-semibold hover:bg-bench-orange transition-colors font-bench-font">
+                        Réservez
+                    </button>
+
+                    <div class="border-t border-gray-200 pt-6">
+                        <h2 class="text-xl font-semibold mb-4 text-bench-orange font-bench-font">Avis Récents</h2>
+                        <div class="space-y-4">
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <div class="flex text-yellow-400"></div><span class="text-gray-600 text-sm">il y a 3
+                                        jours</span>
+                                </div>
+                                <p class="text-gray-600">"Très paisible, j’ai adoré."</p>
+                                <p class="text-sm text-gray-500 mt-1">- Yuki M.</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <div class="flex text-yellow-400"></div><span class="text-gray-600 text-sm">il y a 1
+                                        semaine</span>
+                                </div>
+                                <p class="text-gray-600">"Super endroit pendant la saison des cerisiers."</p>
+                                <p class="text-sm text-gray-500 mt-1">- Takashi I.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <!-- Navigation entre bancs -->
+            <div class="flex justify-between items-center mt-8 pt-6 border-t border-gray-200">
+                <a href="produit7.html"
+                    class="flex items-center gap-2 text-bench-green hover:text-bench-orange transition-colors font-bench-font font-semibold">
+                    <i class="fas fa-chevron-left text-lg"></i>
+                    <span>Banc précédent</span>
+                </a>
 
-            <div class="w-full lg:w-2/5 space-y-6">
-                <h1 class="text-3xl font-bold text-gray-800">Retraite de Hyde Park</h1>
-                <p class="text-xl text-gray-600">Londres, Royaume-Uni</p>
+                <a href="products.html" class="text-gray-600 hover:text-bench-green transition-colors font-bench-font">
+                    <i class="fas fa-th-large mr-2"></i>
+                    Voir tous les bancs
+                </a>
 
-                <div class="flex items-center gap-4">
-                    <span class="text-2xl font-bold text-gray-900">18£/30min</span>
-                    <div class="flex items-center gap-2">
-                        <div class="flex"><svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg><svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg><svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg><svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg><svg class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg></div>
-                        <span class="text-gray-600">(220 avis)</span>
-                    </div>
-                </div>
-
-                <div class="border-t border-gray-200 pt-6">
-                    <h2 class="text-xl font-semibold mb-4">Description</h2>
-                    <p class="text-gray-600 leading-relaxed">Banc situé près du lac Serpentine à Hyde Park, parfait pour
-                        un après-midi calme.</p>
-                </div>
-
-                <button
-                    class="w-full bg-green-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-green-700 transition-colors">
-                    Réservez
-                </button>
-
-                <div class="border-t border-gray-200 pt-6">
-                    <h2 class="text-xl font-semibold mb-4">Avis Récents</h2>
-                    <div class="space-y-4">
-                        <div class="bg-white p-4 rounded-lg shadow-sm">
-                            <div class="flex items-center gap-2 mb-2">
-                                <div class="flex text-yellow-400"></div><span class="text-gray-600 text-sm">il y a 5
-                                    jours</span>
-                            </div>
-                            <p class="text-gray-600">"Paysage magnifique."</p>
-                            <p class="text-sm text-gray-500 mt-1">- Charlotte K.</p>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg shadow-sm">
-                            <div class="flex items-center gap-2 mb-2">
-                                <div class="flex text-yellow-400"></div><span class="text-gray-600 text-sm">il y a 1
-                                    semaine</span>
-                            </div>
-                            <p class="text-gray-600">"Meilleur banc de Londres."</p>
-                            <p class="text-sm text-gray-500 mt-1">- James H.</p>
-                        </div>
-                    </div>
-                </div>
+                <a href="produit9.html"
+                    class="flex items-center gap-2 text-bench-green hover:text-bench-orange transition-colors font-bench-font font-semibold">
+                    <span>Banc suivant</span>
+                    <i class="fas fa-chevron-right text-lg"></i>
+                </a>
             </div>
         </div>
-    </div>
+
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script>
@@ -158,7 +184,7 @@
             },
         });
     </script>
-    <footer class="">
+    <footer class="mt-auto">
         <div class="container mx-auto py-2 flex justify-between items-center border-t-2 mt-4">
             <a href="index.html"><img class="w-20 " src=" img/logo-bench-shop.png" alt="Bench Shop Logo"> </a>
             <nav>
