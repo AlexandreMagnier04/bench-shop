@@ -34,9 +34,24 @@
 
     <!-- Add Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <style>
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #E69336 !important;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: #E69336 !important;
+        }
+
+        .swiper-pagination-bullet {
+            background-color: rgba(230, 147, 54, 0.3) !important;
+        }
+    </style>
 </head>
 
-<body class="min-h-screen flex flex-col">
+<body class="min-h-screen flex flex-col font-bench-font">
     <header class="mx-auto w-full max-w-[1200px] px-4">
         <div class="flex justify-between items-center border-b-2">
             <a href="index.html"><img class="w-40 " src=" img/logo-bench-shop.png" alt="Bench Shop Logo"> </a>
@@ -68,15 +83,7 @@
                     <div class="swiper mySwiper rounded-xl overflow-hidden shadow-lg">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img src="img/beffroi1.jpg" alt="Le Banc du Beffroi View 1"
-                                    class="w-full h-[500px] object-cover">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="img/beffroi2.jpg" alt="Le Banc du Beffroi View 2"
-                                    class="w-full h-[500px] object-cover">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="img/beffroi3.jpg" alt="Le Banc du Beffroi View 3"
+                                <img src="img/bef1.png" alt="Le Banc du Beffroi View 1"
                                     class="w-full h-[500px] object-cover">
                             </div>
                         </div>
