@@ -8,6 +8,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lexend:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap"
         rel="stylesheet">
@@ -203,28 +204,149 @@
             },
         });
     </script>
-    <footer class="">
-        <div class="container mx-auto py-2 flex justify-between items-center border-t-2 mt-4">
-            <a href="index.html"><img class="w-20 " src=" img/logo-bench-shop.png" alt="Bench Shop Logo"> </a>
-            <nav>
-                <ul class="flex space-x-12">
-                    <li><a href="index.html"
-                            class="relative font-bench-font text-bench-orange text-sm font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">Accueil</a>
-                    </li>
-                    <li><a href="products.html"
-                            class="relative font-bench-font text-bench-orange text-sm font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">Nos
-                            bancs</a></li>
-                    <li><a href="map.html"
-                            class="relative font-bench-font text-bench-orange text-sm font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">Map</a>
-                    </li>
-                    <li><a href="aboutus.html"
-                            class="relative font-bench-font text-bench-orange text-sm font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">À
-                            propos</a></li>
-                    <li><a href="contact.html"
-                            class="relative font-bench-font text-bench-orange text-sm font-bold transition-all duration-300 hover:text-bench-green hover:scale-110 before:content-[''] before:absolute before:w-0 before:h-0.5 before:bottom-0 before:left-1/2 before:bg-bench-green before:transition-all before:duration-300 hover:before:w-full hover:before:left-0">Contact</a>
-                    </li>
-                </ul>
-            </nav>
+    <!-- Footer -->
+    <footer class="bg-white text-bench-green mt-auto border-t-2 border-gray-200">
+        <!-- Section principale du footer -->
+        <div class="max-w-6xl mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Logo et description -->
+                <div class="lg:col-span-1">
+                    <div class="mb-6">
+                        <img class="w-24 h-auto mb-4 border-2 border-bench-green p-2 rounded" src="img/logo-bench-shop.png" alt="Bench Shop Logo">
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Bench Shop, votre spécialiste en mobilier urbain de qualité. Nous créons des bancs durables et esthétiques pour embellir vos espaces extérieurs.
+                        </p>
+                    </div>
+                    
+                    <!-- Réseaux sociaux -->
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-bench-orange hover:bg-orange-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-bench-orange hover:bg-orange-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-bench-orange hover:bg-orange-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="bg-bench-orange hover:bg-orange-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Navigation rapide -->
+                <div>
+                    <h3 class="text-bench-orange font-bold text-lg mb-4 font-bench-font">Navigation</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-bench-green hover:text-bench-orange transition-colors duration-300 text-sm">Accueil</a></li>
+                        <li><a href="products.html" class="text-bench-green hover:text-bench-orange transition-colors duration-300 text-sm">Nos bancs</a></li>
+                        <li><a href="map.html" class="text-bench-green hover:text-bench-orange transition-colors duration-300 text-sm">Carte interactive</a></li>
+                        <li><a href="aboutus.html" class="text-bench-green hover:text-bench-orange transition-colors duration-300 text-sm">À propos</a></li>
+                        <li><a href="contact.html" class="text-bench-green hover:text-bench-orange transition-colors duration-300 text-sm">Contact</a></li>
+                        <li><a href="catalog.html" class="text-bench-green hover:text-bench-orange transition-colors duration-300 text-sm">Catalogue</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h3 class="text-bench-orange font-bold text-lg mb-4 font-bench-font">Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-bench-green hover:text-bench-orange transition-colors duration-300 text-sm">Installation</a></li>
+                        <li><a href="#" class="text-bench-green hover:text-bench-orange transition-colors duration-300 text-sm">Maintenance</a></li>
+                        <li><a href="#" class="text-bench-green hover:text-bench-orange transition-colors duration-300 text-sm">Conception sur mesure</a></li>
+                        <li><a href="#" class="text-bench-green hover:text-bench-orange transition-colors duration-300 text-sm">Devis gratuit</a></li>
+                        <li><a href="#" class="text-bench-green hover:text-bench-orange transition-colors duration-300 text-sm">Garantie</a></li>
+                        <li><a href="#" class="text-bench-green hover:text-bench-orange transition-colors duration-300 text-sm">SAV</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Coordonnées -->
+                <div>
+                    <h3 class="text-bench-orange font-bold text-lg mb-4 font-bench-font">Contact</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-map-marker-alt text-bench-orange mt-1"></i>
+                            <p class="text-bench-green text-sm">
+                                123 Avenue des Artisans
+
+                                75001 Paris, France
+                            </p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-bench-orange"></i>
+                            <a href="tel:+33123456789" class="text-bench-green hover:text-bench-orange transition-colors duration-300 text-sm">
+                                +33 1 23 45 67 89
+                            </a>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-bench-orange"></i>
+                            <a href="mailto:info@benchshop.fr" class="text-bench-green hover:text-bench-orange transition-colors duration-300 text-sm">
+                                info@benchshop.fr
+                            </a>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-clock text-bench-orange"></i>
+                            <p class="text-bench-green text-sm">
+                                Lun-Ven: 8h-18h
+
+                                Sam: 9h-12h
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Newsletter -->
+        <div class="border-t border-gray-200">
+            <div class="max-w-6xl mx-auto px-4 py-8">
+                <div class="text-center lg:text-left lg:flex lg:items-center lg:justify-between">
+                    <div class="mb-4 lg:mb-0">
+                        <h4 class="text-bench-orange font-bold text-lg mb-2">Restez informé</h4>
+                        <p class="text-bench-green text-sm">Recevez nos dernières nouveautés et offres spéciales</p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto lg:mx-0">
+                        <input 
+                            type="email" 
+                            placeholder="Votre adresse email" 
+                            class="flex-1 px-4 py-2 rounded-lg border-2 border-bench-green text-bench-green text-sm focus:outline-none focus:ring-2 focus:ring-bench-orange focus:border-bench-orange"
+                        >
+                        <button class="bg-bench-orange hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-medium text-sm transition-colors duration-300">
+                            S'abonner
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mentions légales et copyright -->
+        <div class="border-t border-gray-200 bg-gray-50">
+            <div class="max-w-6xl mx-auto px-4 py-6">
+                <div class="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
+                    <div class="text-bench-green text-sm text-center lg:text-left">
+                        © 2024 Bench Shop. Tous droits réservés.
+                    </div>
+                    <div class="flex flex-wrap justify-center lg:justify-end gap-6 text-sm">
+                        <a href="mentions-legales.html" class="text-bench-green hover:text-bench-orange transition-colors duration-300">
+                            Mentions légales
+                        </a>
+                        <a href="politique-confidentialite.html" class="text-bench-green hover:text-bench-orange transition-colors duration-300">
+                            Politique de confidentialité
+                        </a>
+                        <a href="cgv.html" class="text-bench-green hover:text-bench-orange transition-colors duration-300">
+                            CGV
+                        </a>
+                        <a href="cookies.html" class="text-bench-green hover:text-bench-orange transition-colors duration-300">
+                            Gestion des cookies
+                        </a>
+                        <a href="plan-site.html" class="text-bench-green hover:text-bench-orange transition-colors duration-300">
+                            Plan du site
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
 </body>
